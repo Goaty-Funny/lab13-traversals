@@ -124,6 +124,15 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	public void preOrderStack() {
 		Stack<BSTNode<T>> pre = new Stack<BSTNode<T>>();
 
+		if (root != null) {
+			pre.push(root);
+			while (!pre.isEmpty()) {
+				BSTNode<T> cur = pre.pop();
+				System.out.println(cur + " ");
+
+			}
+		}
+
 	}
 
 	// Traverse the tree in an inorder fashion
@@ -135,12 +144,26 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	}
 
 	public void inOrderRecurse(BSTNode<T> node) {
-
+		if (node == null) return;
+		if (node.leftChild != null) inOrderRecurse(node.leftChild);
+		System.out.println(node.data);
+		if (node.rightChild != null) inOrderRecurse(node.rightChild);
 	}
 
 	// Traverse the tree in an inorder fashion but using a stack
 	public void inOrderStack() {
 		Stack<BSTNode<T>> in = new Stack<BSTNode<T>>();
+		BSTNode<T> current = root;
+		while (current != null || in.empty() == false) {
+			while (current != null) {
+				in.push(current);
+				current = current.leftChild;
+			}
+			
+			current = in.pop();
+			System.out.println(current.data);
+			current = current.rightChild;	
+		}
 
 		System.out.println("inOrder test commit");
 	}
