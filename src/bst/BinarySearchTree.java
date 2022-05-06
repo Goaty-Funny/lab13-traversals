@@ -142,12 +142,16 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	public void inOrderStack() {
 		Stack<BSTNode<T>> in = new Stack<BSTNode<T>>();
 
+		System.out.println("inOrder test commit");
+		
+
 	}
 
 	// Traverse the tree in an postorder fashion
 	// Recurse on the children and then print the value in the current node
 	public void postOrder() {
-		postOrderRecurse(root);
+
+		postOrderRecurse(root); 
 		System.out.println("PostOrder test commit");
 		postOrderRecurse(root);
 	}
