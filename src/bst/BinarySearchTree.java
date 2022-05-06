@@ -129,6 +129,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			while (!pre.isEmpty()) {
 				BSTNode<T> cur = pre.pop();
 				System.out.println(cur + " ");
+				if (cur.leftChild != null)
+					pre.push(cur.leftChild);
+				if (cur.rightChild != null)
+					pre.push(cur.rightChild);
 
 			}
 		}
