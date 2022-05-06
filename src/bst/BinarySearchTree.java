@@ -150,11 +150,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			
 			current = in.pop();
 			System.out.println(current.data);
-			current = current.rightChild;
-			
-
+			current = current.rightChild;	
 		}
-
 	}
 
 	// Traverse the tree in an postorder fashion
